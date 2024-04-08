@@ -1,0 +1,26 @@
+Objetivo: Un programa en Typescript que genera una página en HTML a partir de datos leídos en JSON.
+
+El programa debe:
+
+1. Leer datos de alguna API que devuelva los datos en JSON. 
+2. Cargar esos datos en objetos de una clase creada especificamente para ello (escogiendo los campos que
+se quieran conversar, la API seguramente devuelve más.)
+3. Generar HTML incrustando los datos en el HTML.
+
+Additional Guidelines:
+
+1. La página principal (index.html) debería ser una lista de elementos (usuarios, peliculas, libros, etc.)
+2. Hay que generar páginas de HTML por cada elemento de la lista, la página principal tiene links a 
+las páginas individuales.
+3. La lista deve tener al menos 50 elementos (vamos a hacer 100).
+
+Recomendaciones:
+
+1. Hacer una chuleta (escrita a mano!) de las tecnicas necesarias antes de empezar. El ejemplo de Pau es
+un buen material de estudio para organizarme.
+2. Ir por pasos en la implementación (tener siempre algo funcionando que se va ampliando commit por commit)
+2.1 Leer datos de la API (log in console)
+2.2 Crear clases que los almacenan (log in console)
+2.3 Gener una página de HTML muy sencilla y visualizar en navegador
+2.4 Ir ampliando esa pagina y añadir los links adicionales por cada elemento de la lista
+2.5 Poner estilos en CSS para la pagina
