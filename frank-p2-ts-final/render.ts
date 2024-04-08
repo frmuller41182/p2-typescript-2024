@@ -1,6 +1,7 @@
 /*this file will contain the function to render the objects (questions) of my program.
  */
 import { Question } from "./questions";
+import { writeFile } from "fs/promises";
 
 export const header = () => {
   return `<!DOCTYPE html>
@@ -28,7 +29,7 @@ export const header = () => {
   </head>`;
 };
 
-export const draftPage = (questions: Array<Question>) => {
+export const draftPage = async (questions: Array<Question>) => {
   let html = `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -53,9 +54,14 @@ export const draftPage = (questions: Array<Question>) => {
       <title>Virtus Scientia Academy (VSA) | Home Page</title>
     </head>
     <body>`;
+  let questionCounter = 1;
   for (const question of questions) {
-    html += `<p> ${question.question}</p>`;
+    let fileName = `question${questionCounter}.html`;
+    questionCounter += 1;
+    await writeFile(`${fileName}`, header());
+    html += `<p> <a href=./${fileName}>${question.question}</a></p>`;
   }
   html += "</body>";
+
   return html;
 };

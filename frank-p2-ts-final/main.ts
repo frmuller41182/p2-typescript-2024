@@ -5,7 +5,7 @@ import { header } from "./render";
 import { draftPage } from "./render";
 
 //Main program which leverages the functions and scripts we created in seperate files and are importing here.
-const questions = await getQuestions(100);
-const html = draftPage(questions);
+const questions = await getQuestions(2);
+const html = await draftPage(questions);
 
 await writeFile("index.html", html);
