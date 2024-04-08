@@ -24,3 +24,10 @@ un buen material de estudio para organizarme.
 2.3 Gener una página de HTML muy sencilla y visualizar en navegador
 2.4 Ir ampliando esa pagina y añadir los links adicionales por cada elemento de la lista
 2.5 Poner estilos en CSS para la pagina
+
+ESTRUCTURA:
+
+Práctica 2: We will do a Trivia Page!
+
+Stretch Goal: Not only achieve the list of questions and the inidivual HTML pages for all of them, but also
+provide the user the ability to answer the questions! That would be very cool.
