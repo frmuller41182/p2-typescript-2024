@@ -31,6 +31,13 @@ Práctica 2: Vamos a hacer un juego de Trivia! Quiero extender la página de HTM
 la primera práctica. En el main body en vez de tener la imagen y el artículo que hice voy a poner los links
 a las diferentes preguntas del trivia como si fuera un examen.
 
-
 Stretch Goal: Not only achieve the list of questions and the inidivual HTML pages for all of them, but also
 provide the user the ability to answer the questions! That would be very cool.
+
+Also thing bigger in terms of HTML and CSS. Look at the 
+
+TODOS:
+
+1. Achieve Basic Functionality.
+2. In each of the questions page add buttons and make it like an exam.
+3. Get inspired from other students work and add some next-level HTM and CSS into the P2 assignment. 

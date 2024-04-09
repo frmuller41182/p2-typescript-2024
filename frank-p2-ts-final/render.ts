@@ -1,64 +1,35 @@
-/*this file will contain the function to render the objects (questions) of my program.
+/*This file will contain the functions to render the objects (questions) of my program.
+We will be rendering different HTML Pages. 
+
+1. First of all we will be rendering the main page. 
  */
 import { Question } from "./questions";
 import { writeFile } from "fs/promises";
+import { headerMainPage } from "./html_components/header";
+import { headerQuestionPage } from "./html_components/header";
 
-export const header = () => {
-  return `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A diverse, merit-based educational institution, Virtus Scientia Academy is dedicated to fostering excellence and 
-      virtue in the pursuit of knowledge. Offering unparalleled education with a focus on innovation, 
-      leadership, and philosophy, we empower students to achieve their highest potential in a global society."
-    />
-    <meta
-      name="keywords"
-      content="educational, academy, leadership, stoicism, global, innovation, wisdom, college, technology, economics, politics, "
-    />
-    <link
-      rel="icon"
-      type="image/ico"
-      href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
-    />
-    <link rel="stylesheet" href="VSA.css" />
-    <title>Virtus Scientia Academy (VSA) | Home Page</title>
-  </head>`;
+const renderQuestionPage = (question: Question) => {
+  let html = "";
+  let header = headerQuestionPage();
+  html += header;
+  // add all fields of the question object to the html as p tags
+  html += `<h1>${question.question}</h1>`;
+  html += `<p>${question.category}</p>`;
+  html += `<p>${question.answer}</p>`;
+  html += `<p>${question.incorrect_answers}</p>`;
+  html += `<p>${question.difficulty}</p>`;
+  return html;
 };
 
 export const draftPage = async (questions: Array<Question>) => {
-  let html = `<!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-        name="description"
-        content="A diverse, merit-based educational institution, Virtus Scientia Academy is dedicated to fostering excellence and 
-        virtue in the pursuit of knowledge. Offering unparalleled education with a focus on innovation, 
-        leadership, and philosophy, we empower students to achieve their highest potential in a global society."
-      />
-      <meta
-        name="keywords"
-        content="educational, academy, leadership, stoicism, global, innovation, wisdom, college, technology, economics, politics, "
-      />
-      <link
-        rel="icon"
-        type="image/ico"
-        href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
-      />
-      <link rel="stylesheet" href="VSA.css" />
-      <title>Virtus Scientia Academy (VSA) | Home Page</title>
-    </head>
-    <body>`;
+  let html = headerMainPage();
   let questionCounter = 1;
   for (const question of questions) {
+    console.log("We're doing some debugging!");
+    console.log(question);
     let fileName = `question${questionCounter}.html`;
     questionCounter += 1;
-    await writeFile(`${fileName}`, header());
+    await writeFile(`${fileName}`, renderQuestionPage(question));
     html += `<p> <a href=./${fileName}>${question.question}</a></p>`;
   }
   html += "</body>";
