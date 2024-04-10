@@ -1,6 +1,6 @@
 /*This file will contain the functions to render the objects (questions) of my program.
 We will be rendering different HTML Pages. 
-
+Shuffle the JS Array: https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
 1. First of all we will be rendering the main page. 
  */
 
@@ -19,11 +19,22 @@ const renderQuestionPage = (question: Question) => {
   html += `<h1>${question.question}</h1>`;
   html += `<p>${question.category}</p>`;
   html += `<p>${question.difficulty}</p>`;
-  html += `<button>${question.answer}</button>`;
-  //Add button HTML tags to html variable for each of the incorrect answers. Use a foor loop to iterate over string values in an array.
-  for (const incorrectAnswer of question.incorrect_answers) {
-    html += `<button>${incorrectAnswer}</button>`;
+  //We'll combine correct answers with incorrect ones, so then we can shuffle the buttons in the page.
+  let allAnswers = [question.answer, ...question.incorrect_answers];
+  //Shuffle the allAnswersArray
+  allAnswers.sort(() => Math.random() - 0.5);
+  //Add the shuffled answers to the html
+  for (const answer of allAnswers) {
+    let buttonClass = "";
+    if (answer === question.answer) {
+      buttonClass = "answerButton correctAnswer";
+    } else {
+      buttonClass = "answerButton";
+    }
+    html += `<button class ="${buttonClass}">${answer}</button>`;
   }
+  html += `<script src="./scripts/answerButton.js"></script>`;
+
   return html;
 };
 
