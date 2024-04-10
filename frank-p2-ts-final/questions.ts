@@ -9,12 +9,18 @@ console.log("Hello! We are starting the program");
 
 //Creating the TS Class to store the questions. We define the fields and the constructor.
 export class Question {
+  public question: string;
+  public category: string;
+  public answer: string;
+  public incorrect_answers: string[];
+  public difficulty: string;
+
   constructor(
-    public question: string,
-    public answer: string,
-    public incorrect_answers: string[],
-    public category: string,
-    public difficulty: string
+    question: string,
+    answer: string,
+    incorrect_answers: string[],
+    category: string,
+    difficulty: string
   ) {
     this.question = question;
     this.answer = answer;
