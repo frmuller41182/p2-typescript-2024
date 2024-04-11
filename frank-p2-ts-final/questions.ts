@@ -4,9 +4,6 @@ In this file we will:
 1. Create the class to store the different objects (trivia questions)
 2. Create the function to fetch the data from the API
 */
-
-console.log("Hello! We are starting the program");
-
 //Creating the TS Class to store the questions. We define the fields and the constructor.
 export class Question {
   public question: string;

@@ -47,3 +47,5 @@ TODOS:
 4. Add a timer to the question pages (30"). --> DONE
 5. Add a Pokemon to each question page, to give the students support.
 6. Add animations and more advanced UI front-end features. 
+7. Continue to step by step add the missing HTML Elements I want 
+8. Add a dynamic title for the exam page that has the number of questions and also the topics covered

@@ -4,7 +4,7 @@ import { writeFile } from "fs/promises";
 import { renderMainPage } from "./render";
 
 //Main program which leverages the functions and scripts we created in seperate files and are importing here.
-const questions = await getQuestions(4);
+const questions = await getQuestions(10);
 const html = await renderMainPage(questions);
 
 await writeFile("index.html", html);
