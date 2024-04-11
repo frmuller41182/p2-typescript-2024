@@ -8,14 +8,18 @@ import { Question } from "./questions";
 import { writeFile } from "fs/promises";
 import { headerMainPage } from "./html_components/header";
 import { headerQuestionPage } from "./html_components/header";
+import { topBar } from "./html_components/topBar";
 
 //Function to render an invidual HTML page for each of the questions.
 
 const renderQuestionPage = (question: Question) => {
   let html = "";
   let header = headerQuestionPage();
+  let top = topBar();
   html += header;
+  html += top;
   // add all fields of the question object to the html as p tags
+  html += `<p><a href='../index.html'>Go Back </a></p>`;
   html += `<h1>${question.question}</h1>`;
   html += `<p>${question.category}</p>`;
   html += `<p>${question.difficulty}</p>`;
@@ -33,25 +37,37 @@ const renderQuestionPage = (question: Question) => {
     }
     html += `<button class ="${buttonClass}">${answer}</button>`;
   }
-  html += `<script src="./scripts/answerButton.js"></script>`;
+  html += `<div id="timer"></div>`;
+  html += `<script src="../scripts/answerButton.js"></script>`;
+  html += `<script src="../scripts/timer.js"></script>`;
 
   return html;
 };
 
 //Function to render the main index.html page with all the questions and their subpages as well.
 
-export const draftPage = async (questions: Array<Question>) => {
-  let html = headerMainPage();
+export const mainContent = async (questions: Array<Question>) => {
   let questionCounter = 1;
+  let html = ``;
   for (const question of questions) {
     console.log("We're doing some debugging!");
     console.log(question);
-    let fileName = `question${questionCounter}.html`;
+    let fileName = `./question_pages/question${questionCounter}.html`;
     questionCounter += 1;
     await writeFile(`${fileName}`, renderQuestionPage(question));
     html += `<p> <a href=./${fileName}>${question.question}</a></p>`;
   }
-  html += "</body>";
-
   return html;
+};
+
+//Work in progress
+export const renderMainPage = async (questions: Array<Question>) => {
+  return `
+  <html>
+    ${headerMainPage()}
+    <body>
+        ${topBar()}
+        ${await mainContent(questions)}
+    </body>
+  </html>`;
 };

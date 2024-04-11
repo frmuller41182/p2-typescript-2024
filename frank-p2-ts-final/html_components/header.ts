@@ -19,7 +19,7 @@ export const headerMainPage = () => {
         type="image/ico"
         href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
       />
-      <link rel="stylesheet" href="VSA.css" />
+      <link rel="stylesheet" href="trivia.css" />
       <title>Virtus Scientia Academy (VSA) | Home Page</title>
     </head>`;
 };
@@ -45,7 +45,7 @@ export const headerQuestionPage = () => {
           type="image/ico"
           href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
         />
-        <link rel="stylesheet" href="VSA.css" />
+        <link rel="stylesheet" href="trivia.css" />
         <title>Virtus Scientia Academy (VSA) | Home Page</title>
       </head>`;
 };

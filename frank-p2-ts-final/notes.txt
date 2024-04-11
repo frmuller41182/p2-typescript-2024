@@ -2,10 +2,13 @@ Objetivo: Un programa en Typescript que genera una página en HTML a partir de d
 
 El programa debe:
 
-1. Leer datos de alguna API que devuelva los datos en JSON. 
+1. Leer datos de alguna API que devuelva los datos en JSON. --> DONE
 2. Cargar esos datos en objetos de una clase creada especificamente para ello (escogiendo los campos que
-se quieran conversar, la API seguramente devuelve más.)
-3. Generar HTML incrustando los datos en el HTML.
+se quieran conversar, la API seguramente devuelve más.) --> DONE
+3. Generar HTML incrustando los datos en el HTML. --> DONE (But definitely needs improvement)
+3.1 Necesitamos que cree las distintas páginas HTML en una carpeta
+4. En la página del Examen vamso a poner un POKEMON
+4.1 Tendremos que crear una funcion que llame a la poke API y una clase de TS que guarde los datos, en concreto nos interesa el nombre y el animated GIF.
 
 Additional Guidelines:
 
@@ -34,10 +37,13 @@ a las diferentes preguntas del trivia como si fuera un examen.
 Stretch Goal: Not only achieve the list of questions and the inidivual HTML pages for all of them, but also
 provide the user the ability to answer the questions! That would be very cool.
 
-Also thing bigger in terms of HTML and CSS. Look at the 
+Also thing bigger in terms of HTML and CSS. Look at the examples from other students.
 
 TODOS:
 
-1. Achieve Basic Functionality.
-2. In each of the questions page add buttons and make it like an exam.
+1. Achieve Basic Functionality. --> DONE
+2. In each of the questions page add buttons to simulate an exam. --> DONE
 3. Get inspired from other students work and add some next-level HTM and CSS into the P2 assignment. 
+4. Add a timer to the question pages (30"). --> DONE
+5. Add a Pokemon to each question page, to give the students support.
+6. Add animations and more advanced UI front-end features. 
