@@ -18,8 +18,107 @@
           type="image/ico"
           href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
         />
-        <link rel="stylesheet" href="trivia.css" />
-        <title>Virtus Scientia Academy (VSA) | Home Page</title>
+        <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #8b0000;
+            --article-background-color: white;
+            --font-color-primary-background: antiquewhite;
+            --font-color-secondary-background: #000000;
+            /* As we saw in class we declare a few options in case the user's browser doesn't support the first one. */
+            --primary-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            /* Using the best practices values and*/
+            --font-size-small: 0.8rem;
+            --font-size-regular: 1rem;
+            --font-size-large: 1.5rem;
+          }
+          
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .user {
+          font-family: sans-serif;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: .4rem;
+          border-bottom: 1px solid #ddd;
+        }
+        .user img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          margin-right: 0.7rem;
+        }
+        .user .name {
+          font-weight: bold;
+        }
+        .user .email {
+          font-family: monospace;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            box-sizing: border-box;
+            flex: 0.5;
+            max-height: 10vh;
+          }
+          
+          #topBar {
+            background-color: var(--secondary-color);
+            max-height: 100%;
+          }
+          
+          .topBarEl {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            box-sizing: border-box;
+            max-height: 100%;
+            width: 100%;
+          }
+          
+          #topLogo {
+            max-height: 90%;
+            flex: 0.5;
+          }
+          
+          #topLogo img {
+            height: 10vh;
+            max-height: 40vh;
+          }
+          
+          #TopBarTitle {
+            font-size: 2rem;
+            max-height: 7vh;
+            margin-top: 0;
+            width: auto;
+            flex: 1;
+          }
+          
+          #TopBarTitle h1 {
+            max-height: 90%;
+            margin-top: 0;
+            color: var(--font-color-secondary-background);
+          }
+          
+          #ButtonContainer {
+            flex: 0.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          #TopBarTitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+      </style>
+              <title>Virtus Scientia Academy (VSA) | Home Page</title>
       </head><header>
     <section id="topBar">
       <div class="topBarEl">
@@ -42,7 +141,7 @@
         </div>
       </div>
     </section>
-  </header><p><a href='../index.html'>Go Back </a></p><h1>Ellen McLain, the voice of GLaDOS in the Portal game series, is married to the voice actor for which Team Fortress 2 character?</h1><p>Entertainment: Video Games</p><p>medium</p><button class ="answerButton">Soldier</button><button class ="answerButton correctAnswer">Sniper</button><button class ="answerButton">Scout</button><button class ="answerButton">Heavy</button><div id="timer"></div><div class="pokemonDiv"><h3>nidorina</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/30.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/30.ogg" ></audio><button class="cryButton" onclick="playCry()">Cry</button><script>function playCry() {
+  </header><p><a href='../index.html'>Go Back </a></p><h1>After England, more Shakespeare plays are set in this present day country than in any other.</h1><p>Entertainment: Musicals &amp; Theatres</p><p>hard</p><button class ="answerButton">France</button><button class ="answerButton">United States</button><button class ="answerButton correctAnswer">Italy</button><button class ="answerButton">Greece</button><div id="timer"></div><div class="pokemonDiv"><h3>golduck</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/55.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/55.ogg" ></audio><button class="cryButton" onclick="playCry()">Cry</button><script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
       audio.play();

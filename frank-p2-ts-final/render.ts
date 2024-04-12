@@ -70,7 +70,15 @@ const renderQuestionPage = async (question: Question) => {
 
 export const mainContent = async (questions: Array<Question>) => {
   let questionCounter = 1;
-  let html = ``;
+  let numQuestions = questions.length;
+  let topics: Array<String> = [];
+  for (const question of questions) {
+    let questionTopic = " " + question.category + " ";
+    topics.push(questionTopic);
+  }
+  let html = `
+  <h1> Welcome to VSA's Entrance Exam</h1>
+  <h3> The exam consists of ${numQuestions} questions, and covers the following topics: ${topics}. </h3> `;
   for (const question of questions) {
     console.log("We're doing some debugging!");
     console.log(question);

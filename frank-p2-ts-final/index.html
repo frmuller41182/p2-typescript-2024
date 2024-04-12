@@ -20,7 +20,106 @@
         type="image/ico"
         href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
       />
-      <link rel="stylesheet" href="trivia.css" />
+      <style>
+      :root {
+        --primary-color: #000000;
+        --secondary-color: #8b0000;
+        --article-background-color: white;
+        --font-color-primary-background: antiquewhite;
+        --font-color-secondary-background: #000000;
+        /* As we saw in class we declare a few options in case the user's browser doesn't support the first one. */
+        --primary-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* Using the best practices values and*/
+        --font-size-small: 0.8rem;
+        --font-size-regular: 1rem;
+        --font-size-large: 1.5rem;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .user {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: .4rem;
+        border-bottom: 1px solid #ddd;
+      }
+      .user img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-right: 0.7rem;
+      }
+      .user .name {
+        font-weight: bold;
+      }
+      .user .email {
+        font-family: monospace;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        box-sizing: border-box;
+        flex: 0.5;
+        max-height: 10vh;
+      }
+      
+      #topBar {
+        background-color: var(--secondary-color);
+        max-height: 100%;
+      }
+      
+      .topBarEl {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        box-sizing: border-box;
+        max-height: 100%;
+        width: 100%;
+      }
+      
+      #topLogo {
+        max-height: 90%;
+        flex: 0.5;
+      }
+      
+      #topLogo img {
+        height: 10vh;
+        max-height: 40vh;
+      }
+      
+      #TopBarTitle {
+        font-size: 2rem;
+        max-height: 7vh;
+        margin-top: 0;
+        width: auto;
+        flex: 1;
+      }
+      
+      #TopBarTitle h1 {
+        max-height: 90%;
+        margin-top: 0;
+        color: var(--font-color-secondary-background);
+      }
+      
+      #ButtonContainer {
+        flex: 0.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      #TopBarTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
       <title>Virtus Scientia Academy (VSA) | Home Page</title>
     </head>
     <body>
@@ -28,7 +127,7 @@
     <section id="topBar">
       <div class="topBarEl">
         <div id="topLogo">
-          <img src="/images/VSA_Logo_Top_bar.png" alt="VSA Academy Logo" />
+          <img src="./images/VSA_Logo_Top_bar.png" alt="VSA Academy Logo" />
         </div>
         <div id="TopBarTitle">
           <h1 id="h1topbar">Virtus Scientia Academy</h1>
@@ -47,6 +146,15 @@
       </div>
     </section>
   </header>
-        <p> <a href=././question_pages/question1.html>Tony Hawk&#039;s extreme sports videogames revolve around performing professional BMX tricks.</a></p><p> <a href=././question_pages/question2.html>In the 1974 Christmas flick &quot;The Year Without a Santa Claus,&quot; what are the names of the two elves who help Mrs. Claus save Christmas?</a></p><p> <a href=././question_pages/question3.html>What song originally performed by The Bee Gees in 1978 had a cover version by Steps 20 years later?</a></p><p> <a href=././question_pages/question4.html>The New York Times slogan is, &ldquo;All the News That&rsquo;s Fit to&hellip;&rdquo;</a></p><p> <a href=././question_pages/question5.html>Ellen McLain, the voice of GLaDOS in the Portal game series, is married to the voice actor for which Team Fortress 2 character?</a></p><p> <a href=././question_pages/question6.html>If you could fold a piece of paper in half 50 times, its&#039; thickness will be 3/4th the distance from the Earth to the Sun.</a></p><p> <a href=././question_pages/question7.html>Which artist released the 2012 single &quot;Harlem Shake&quot;, which was used in numerous YouTube videos in 2013?</a></p><p> <a href=././question_pages/question8.html>Which 90&#039;s comedy cult classic features cameos appearances from Meat Loaf, Alice Cooper and Chris Farley?</a></p><p> <a href=././question_pages/question9.html>AMC&#039;s &quot;The Walking Dead&quot;, Rick, Carl, Daryl, Morgan, Carol and Maggie were introduced to us in Season 1.</a></p><p> <a href=././question_pages/question10.html>Who was the only god from Greece who did not get a name change in Rome?</a></p>
-    </body>
+        
+  <h1> Welcome to VSA's Entrance Exam</h1>
+  <h3> The exam consists of 5 questions, and covers the following topics:  History , Entertainment: Video Games , Celebrities , Geography , Entertainment: Musicals &amp; Theatres . 
+  </h3> 
+  <ol><li><p> <a href=././question_pages/question1.html>Which of the following Assyrian kings did NOT rule during the Neo-Assyrian Empire?</a></p></li>
+  <p> <a href=././question_pages/question2.html>In &quot;The Sims&quot; series, the most members in a household you can have is 8.</a></p>
+  <p> <a href=././question_pages/question3.html>Gwyneth Paltrow has a daughter named...?</a></p>
+  <p> <a href=././question_pages/question4.html>Which of the following countries has a flag featuring a yellow lion wielding a sword on a dark red background?</a></p>
+  <p> <a href=././question_pages/question5.html>After England, more Shakespeare plays are set in this present day country than in any other.</a></p>
+</ul>    
+</body>
   </html>
