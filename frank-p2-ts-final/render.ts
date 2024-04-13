@@ -9,7 +9,8 @@ import { writeFile } from "fs/promises";
 import { headerMainPage } from "./html_components/header";
 import { headerQuestionPage } from "./html_components/header";
 import { topBar } from "./html_components/topBar";
-import { Pokemon } from "./pokemon";
+import { topBarQuestionPage } from "./html_components/topBar";
+import { footerAll } from "./html_components/footer";
 import { getPokemon } from "./pokemon";
 
 const renderPokemonDiv = async () => {
@@ -32,10 +33,14 @@ const renderPokemonDiv = async () => {
 };
 
 //Function to render an invidual HTML page for each of the questions.
-const renderQuestionPage = async (question: Question) => {
+const renderQuestionPage = async (
+  question: Question,
+  questionCounter: any,
+  numQuestions: any
+) => {
   let html = "";
   let header = headerQuestionPage();
-  let top = topBar();
+  let top = topBarQuestionPage();
   let pokemonDiv = await renderPokemonDiv();
   html += header;
   html += top;
@@ -48,6 +53,11 @@ const renderQuestionPage = async (question: Question) => {
   let allAnswers = [question.answer, ...question.incorrect_answers];
   //Shuffle the allAnswersArray
   allAnswers.sort(() => Math.random() - 0.5);
+  //Add an image to the html, with the image being influenced by the category of the question.
+  html += `  <image
+  class="imageQuestion"
+  src="https://source.unsplash.com/featured/?${question.category}"
+/>`;
   //Add the shuffled answers to the html
   for (const answer of allAnswers) {
     let buttonClass = "";
@@ -62,7 +72,22 @@ const renderQuestionPage = async (question: Question) => {
   html += pokemonDiv;
   html += `<script src="../scripts/answerButton.js"></script>`;
   html += `<script src="../scripts/timer.js"></script>`;
+  //Add a div to the html that has two buttons, one to go to the previous page and one to go to the next page. Maku sure the buttons won't be redirecting the user to a questionx.html page that doesn't exist.
 
+  let previousPage = "";
+  let nextPage = "";
+  if (questionCounter > 1) {
+    previousPage = `<a href="./question${
+      questionCounter - 1
+    }.html"><button class="togglePageButton">Previous Question</button></a>`;
+  }
+  if (questionCounter < numQuestions) {
+    nextPage = `<a href="./question${
+      questionCounter + 1
+    }.html"><button class="togglePageButton">Next Question</button></a>`;
+  }
+  html += `<div id="buttonContainer">${previousPage}${nextPage}</div>`;
+  html += footerAll();
   return html;
 };
 
@@ -74,19 +99,27 @@ export const mainContent = async (questions: Array<Question>) => {
   let topics: Array<String> = [];
   for (const question of questions) {
     let questionTopic = " " + question.category + " ";
-    topics.push(questionTopic);
+    if (!topics.includes(questionTopic)) {
+      topics.push(questionTopic);
+    }
   }
   let html = `
   <h1> Welcome to VSA's Entrance Exam</h1>
   <h3> The exam consists of ${numQuestions} questions, and covers the following topics: ${topics}. </h3> `;
+  html += `<ol>`;
   for (const question of questions) {
     console.log("We're doing some debugging!");
     console.log(question);
     let fileName = `./question_pages/question${questionCounter}.html`;
     questionCounter += 1;
-    await writeFile(`${fileName}`, await renderQuestionPage(question));
-    html += `<p> <a href=./${fileName}>${question.question}</a></p>`;
+    await writeFile(
+      `${fileName}`,
+      await renderQuestionPage(question, questionCounter - 1, numQuestions)
+    );
+    html += `<li><p><a href=./${fileName}>${question.question}</a></p></li>`;
   }
+  html += `</ol>`;
+  html += footerAll();
   return html;
 };
 

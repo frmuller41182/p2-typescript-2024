@@ -118,6 +118,23 @@ export const headerMainPage = () => {
         flex-direction: column;
         align-items: center;
       }
+    }
+    footer {
+      flex: 0.3;
+    }
+
+    .FooterEl {
+      display: flex;
+      flex-direction: row;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--secondary-color);
+    }
+
+    .FooterEl div p {
+      color: var(--font-color-secondary-background);
+    }
     </style>
       <title>Virtus Scientia Academy (VSA) | Home Page</title>
     </head>`;
@@ -158,7 +175,7 @@ export const headerQuestionPage = () => {
             --font-size-regular: 1rem;
             --font-size-large: 1.5rem;
           }
-          
+
         body {
           margin: 0;
           padding: 0;
@@ -243,6 +260,28 @@ export const headerQuestionPage = () => {
             flex-direction: column;
             align-items: center;
           }
+          .imageQuestion {
+            size: 2vh;
+            height: 30vh;
+          }
+        
+        footer {
+          flex: 0.3;
+        }
+  
+        .FooterEl {
+          display: flex;
+          flex-direction: row;
+          box-sizing: border-box;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--secondary-color);
+        }
+  
+        .FooterEl div p {
+          color: var(--font-color-secondary-background);
+        }
+
       </style>
               <title>Virtus Scientia Academy (VSA) | Home Page</title>
       </head>`;

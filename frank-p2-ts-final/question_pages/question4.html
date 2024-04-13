@@ -32,7 +32,7 @@
             --font-size-regular: 1rem;
             --font-size-large: 1.5rem;
           }
-          
+
         body {
           margin: 0;
           padding: 0;
@@ -117,33 +117,64 @@
             flex-direction: column;
             align-items: center;
           }
+          .imageQuestion {
+            size: 2vh;
+            height: 30vh;
+          }
+        
+        footer {
+          flex: 0.3;
+        }
+  
+        .FooterEl {
+          display: flex;
+          flex-direction: row;
+          box-sizing: border-box;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--secondary-color);
+        }
+  
+        .FooterEl div p {
+          color: var(--font-color-secondary-background);
+        }
+
       </style>
               <title>Virtus Scientia Academy (VSA) | Home Page</title>
       </head><header>
-    <section id="topBar">
-      <div class="topBarEl">
-        <div id="topLogo">
-          <img src="/images/VSA_Logo_Top_bar.png" alt="VSA Academy Logo" />
+      <section id="topBar">
+        <div class="topBarEl">
+          <div id="topLogo">
+            <img src="../images/VSA_Logo_Top_bar.png" alt="VSA Academy Logo" />
+          </div>
+          <div id="TopBarTitle">
+            <h1 id="h1topbar">Virtus Scientia Academy</h1>
+          </div>
+          <div id="ButtonContainer">
+            <button type="button" id="buttoncolorchange">Change Theme</button>
+            <script>
+              const buttonselected = document.getElementById('buttoncolorchange');
+              buttonselected.addEventListener('click', () => {
+                console.log("I have been clicked!")
+                document.documentElement.style.setProperty('--primary-color', '#3B2F1F');
+                document.documentElement.style.setProperty('--secondary-color', '#7F4E00');
+              });
+            </script>
+          </div>
         </div>
-        <div id="TopBarTitle">
-          <h1 id="h1topbar">Virtus Scientia Academy</h1>
-        </div>
-        <div id="ButtonContainer">
-          <button type="button" id="buttoncolorchange">Change Theme</button>
-          <script>
-            const buttonselected = document.getElementById('buttoncolorchange');
-            buttonselected.addEventListener('click', () => {
-              console.log("I have been clicked!")
-              document.documentElement.style.setProperty('--primary-color', '#3B2F1F');
-              document.documentElement.style.setProperty('--secondary-color', '#7F4E00');
-            });
-          </script>
-        </div>
-      </div>
-    </section>
-  </header><p><a href='../index.html'>Go Back </a></p><h1>Which of the following countries has a flag featuring a yellow lion wielding a sword on a dark red background?</h1><p>Geography</p><p>easy</p><button class ="answerButton correctAnswer">Sri Lanka</button><button class ="answerButton">Kiribati</button><button class ="answerButton">Scotland</button><button class ="answerButton">Bhutan</button><div id="timer"></div><div class="pokemonDiv"><h3>arcanine</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/59.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/59.ogg" ></audio><button class="cryButton" onclick="playCry()">Cry</button><script>function playCry() {
+      </section>
+    </header><p><a href='../index.html'>Go Back </a></p><h1>Which of the following authors was not born in England? </h1><p>Entertainment: Books</p><p>medium</p>  <image
+  class="imageQuestion"
+  src="https://source.unsplash.com/featured/?Entertainment: Books"
+/><button class ="answerButton">H G Wells</button><button class ="answerButton">Graham Greene</button><button class ="answerButton correctAnswer">Arthur Conan Doyle</button><button class ="answerButton">Arthur C Clarke</button><div id="timer"></div><div class="pokemonDiv"><h3>krabby</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/98.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/98.ogg" ></audio><button class="cryButton" onclick="playCry()">Cry</button><script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
       audio.play();
     }
-  }</script></div><script src="../scripts/answerButton.js"></script><script src="../scripts/timer.js"></script>
+  }</script></div><script src="../scripts/answerButton.js"></script><script src="../scripts/timer.js"></script><div id="buttonContainer"><a href="./question3.html"><button class="togglePageButton">Previous Question</button></a><a href="./question5.html"><button class="togglePageButton">Next Question</button></a></div><section id="Footer">
+<div class="FooterEl">
+  <div>
+    <p>&copy; <b>2024 VSA Academy All Rights Reserved.</b></p>
+  </div>
+</div>
+</section>
