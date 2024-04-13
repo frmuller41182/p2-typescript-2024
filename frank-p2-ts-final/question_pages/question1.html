@@ -19,6 +19,7 @@
           href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
         />
         <style>
+        /* Variable declaration and high level styling */
         :root {
             --primary-color: #000000;
             --secondary-color: #8b0000;
@@ -37,26 +38,7 @@
           margin: 0;
           padding: 0;
         }
-        .user {
-          font-family: sans-serif;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          padding: .4rem;
-          border-bottom: 1px solid #ddd;
-        }
-        .user img {
-          width: 3rem;
-          height: 3rem;
-          border-radius: 50%;
-          margin-right: 0.7rem;
-        }
-        .user .name {
-          font-weight: bold;
-        }
-        .user .email {
-          font-family: monospace;
-        }
+        /* TopBar CSS */
         header {
             display: flex;
             flex-direction: column;
@@ -117,11 +99,57 @@
             flex-direction: column;
             align-items: center;
           }
+
+          /* Question Contents CSS */
+
+          #mainContent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          /* Image Question CSS */
           .imageQuestion {
             size: 2vh;
             height: 30vh;
           }
-        
+          /* Answer Button Stying */
+          .answerButton {
+            background-color: #f8f8f8; /* Light grey background */
+            color: #333; /* Dark text color for contrast */
+            border: 2px solid #ccc; /* Subtle border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Top/bottom and left/right padding */
+            margin: 5px; /* Space between buttons */
+            font-size: 16px; /* Readable font size */
+            cursor: pointer; /* Cursor indicates button */
+            transition: transform 0.1s ease, background-color 0.2s, box-shadow 0.2s; /* Smooth transitions for effects */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+          }
+      
+      .answerButton:hover {
+        background-color: #e0e0e0; /* Slightly darker on hover */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.15); /* Larger shadow on hover for lifting effect */
+      }
+      
+      .answerButton:active {
+        transform: translateY(2px); /* Move down slightly when clicked */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Smaller shadow for pressed effect */
+      }
+      
+      /* Correct answer */
+      .answerButton.correctAnswer {
+        background-color: #4CAF50; /* Green background for correct */
+        color: white; /* White text color for better contrast */
+      }
+      
+      /* Incorrect answer */
+      .answerButton.incorrect {
+        background-color: #f44336; /* Red background for incorrect */
+        color: white; /* White text color for better contrast */
+      }
+        /* Footer Styling */
+
         footer {
           flex: 0.3;
         }
@@ -138,7 +166,6 @@
         .FooterEl div p {
           color: var(--font-color-secondary-background);
         }
-
       </style>
               <title>Virtus Scientia Academy (VSA) | Home Page</title>
       </head><header>
@@ -163,15 +190,16 @@
           </div>
         </div>
       </section>
-    </header><section id = "mainContent"><div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div><div id="questionTitle"><h1>Kuala Lumpur is the capital of which country?</h1></div><div id="questionMetaData"<p>Geography</p><p>medium</p></div>  <div id="questionImage"><image
+    </header><section id = "mainContent"><div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div><div id="questionTitle"><h1>In the original script of &quot;The Matrix&quot;, the machines used humans as additional computing power instead of batteries.</h1></div><div id="questionMetaData"<p>Entertainment: Film</p><p>easy</p></div>  <div id="questionImage"><image
   class="imageQuestion"
-  src="https://source.unsplash.com/featured/?Geography"
-/></div><div id = "questionAnswers"><button class ="answerButton correctAnswer">Malaysia</button><button class ="answerButton">Thailand</button><button class ="answerButton">Singapore</button><button class ="answerButton">Indonesia</button></div><div class="pokemonDiv"><div id="timer"></div><h3>nidoqueen</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/31.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/31.ogg" ></audio><button class="cryButton" onclick="playCry()">Battle Cry</button><script>function playCry() {
+  src="https://source.unsplash.com/featured/?Entertainment: Film"
+/></div><div id = "questionAnswers"><button class ="answerButton correctAnswer">True</button><button class ="answerButton">False</button></div><div class="pokemonDiv"><div id="timer"></div><h3>machop</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/66.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/66.ogg" ></audio><button class="cryButton" onclick="playCry()">Battle Cry</button><script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
       audio.play();
     }
-  }</script></div><script src="../scripts/answerButton.js"></script><script src="../scripts/timer.js"></script><div id="questionNavButtons"><a href="./question2.html"><button class="togglePageButton">Next Question</button></a></div>
+  }
+  </script></div><script src="../scripts/answerButton.js"></script><script src="../scripts/timer.js"></script><div id="questionNavButtons"><a href="./question2.html"><button class="togglePageButton">Next Question</button></a></div>
   </section><section id="Footer">
 <div class="FooterEl">
   <div>

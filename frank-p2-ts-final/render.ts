@@ -28,7 +28,8 @@ const renderPokemonDiv = async () => {
     if (audio) {
       audio.play();
     }
-  }</script>`;
+  }
+  </script>`;
   html += `</div>`;
   return html;
 };
@@ -125,7 +126,7 @@ export const mainContent = async (questions: Array<Question>) => {
       `${fileName}`,
       await renderQuestionPage(question, questionCounter - 1, numQuestions)
     );
-    html += `<div id="questionInstance"><li><p><a href=./${fileName}>${question.question}</a></p></li></div>`;
+    html += `<div class="questionInstance"><li><p><a href=./${fileName}>${question.question}</a></p></li></div>`;
   }
   html += `</ol>
   </div>`;

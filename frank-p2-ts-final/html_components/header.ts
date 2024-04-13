@@ -161,6 +161,7 @@ export const headerQuestionPage = () => {
           href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
         />
         <style>
+        /* Variable declaration and high level styling */
         :root {
             --primary-color: #000000;
             --secondary-color: #8b0000;
@@ -179,26 +180,7 @@ export const headerQuestionPage = () => {
           margin: 0;
           padding: 0;
         }
-        .user {
-          font-family: sans-serif;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          padding: .4rem;
-          border-bottom: 1px solid #ddd;
-        }
-        .user img {
-          width: 3rem;
-          height: 3rem;
-          border-radius: 50%;
-          margin-right: 0.7rem;
-        }
-        .user .name {
-          font-weight: bold;
-        }
-        .user .email {
-          font-family: monospace;
-        }
+        /* TopBar CSS */
         header {
             display: flex;
             flex-direction: column;
@@ -259,11 +241,57 @@ export const headerQuestionPage = () => {
             flex-direction: column;
             align-items: center;
           }
+
+          /* Question Contents CSS */
+
+          #mainContent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          /* Image Question CSS */
           .imageQuestion {
             size: 2vh;
             height: 30vh;
           }
-        
+          /* Answer Button Stying */
+          .answerButton {
+            background-color: #f8f8f8; /* Light grey background */
+            color: #333; /* Dark text color for contrast */
+            border: 2px solid #ccc; /* Subtle border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Top/bottom and left/right padding */
+            margin: 5px; /* Space between buttons */
+            font-size: 16px; /* Readable font size */
+            cursor: pointer; /* Cursor indicates button */
+            transition: transform 0.1s ease, background-color 0.2s, box-shadow 0.2s; /* Smooth transitions for effects */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+          }
+      
+      .answerButton:hover {
+        background-color: #e0e0e0; /* Slightly darker on hover */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.15); /* Larger shadow on hover for lifting effect */
+      }
+      
+      .answerButton:active {
+        transform: translateY(2px); /* Move down slightly when clicked */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Smaller shadow for pressed effect */
+      }
+      
+      /* Correct answer */
+      .answerButton.correctAnswer {
+        background-color: #4CAF50; /* Green background for correct */
+        color: white; /* White text color for better contrast */
+      }
+      
+      /* Incorrect answer */
+      .answerButton.incorrect {
+        background-color: #f44336; /* Red background for incorrect */
+        color: white; /* White text color for better contrast */
+      }
+        /* Footer Styling */
+
         footer {
           flex: 0.3;
         }
@@ -280,7 +308,6 @@ export const headerQuestionPage = () => {
         .FooterEl div p {
           color: var(--font-color-secondary-background);
         }
-
       </style>
               <title>Virtus Scientia Academy (VSA) | Home Page</title>
       </head>`;
