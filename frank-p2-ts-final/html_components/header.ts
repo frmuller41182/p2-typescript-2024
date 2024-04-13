@@ -118,7 +118,6 @@ export const headerMainPage = () => {
         flex-direction: column;
         align-items: center;
       }
-    }
     footer {
       flex: 0.3;
     }

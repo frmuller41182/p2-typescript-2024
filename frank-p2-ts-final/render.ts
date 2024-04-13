@@ -18,10 +18,11 @@ const renderPokemonDiv = async () => {
   let html = "";
   let pokemon = await getPokemon();
   html += `<div class="pokemonDiv">`;
+  html += `<div id="timer"></div>`;
   html += `<h3>${pokemon.species}</h3>`;
   html += `<img src="${pokemon.sprite}">`;
   html += `<audio id= "pokemonCry" src="${pokemon.cry}" ></audio>`;
-  html += `<button class="cryButton" onclick="playCry()">Cry</button>`;
+  html += `<button class="cryButton" onclick="playCry()">Battle Cry</button>`;
   html += `<script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
@@ -44,20 +45,21 @@ const renderQuestionPage = async (
   let pokemonDiv = await renderPokemonDiv();
   html += header;
   html += top;
+  html += `<section id = "mainContent">`;
   // add all fields of the question object to the html as p tags
-  html += `<p><a href='../index.html'>Go Back </a></p>`;
-  html += `<h1>${question.question}</h1>`;
-  html += `<p>${question.category}</p>`;
-  html += `<p>${question.difficulty}</p>`;
+  html += `<div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div>`;
+  html += `<div id="questionTitle"><h1>${question.question}</h1></div>`;
+  html += `<div id="questionMetaData"<p>${question.category}</p><p>${question.difficulty}</p></div>`;
   //We'll combine correct answers with incorrect ones, so then we can shuffle the buttons in the page.
   let allAnswers = [question.answer, ...question.incorrect_answers];
   //Shuffle the allAnswersArray
   allAnswers.sort(() => Math.random() - 0.5);
   //Add an image to the html, with the image being influenced by the category of the question.
-  html += `  <image
+  html += `  <div id="questionImage"><image
   class="imageQuestion"
   src="https://source.unsplash.com/featured/?${question.category}"
-/>`;
+/></div>`;
+  html += `<div id = "questionAnswers">`;
   //Add the shuffled answers to the html
   for (const answer of allAnswers) {
     let buttonClass = "";
@@ -68,7 +70,7 @@ const renderQuestionPage = async (
     }
     html += `<button class ="${buttonClass}">${answer}</button>`;
   }
-  html += `<div id="timer"></div>`;
+  html += `</div>`;
   html += pokemonDiv;
   html += `<script src="../scripts/answerButton.js"></script>`;
   html += `<script src="../scripts/timer.js"></script>`;
@@ -86,7 +88,8 @@ const renderQuestionPage = async (
       questionCounter + 1
     }.html"><button class="togglePageButton">Next Question</button></a>`;
   }
-  html += `<div id="buttonContainer">${previousPage}${nextPage}</div>`;
+  html += `<div id="questionNavButtons">${previousPage}${nextPage}</div>
+  </section>`;
   html += footerAll();
   return html;
 };
@@ -104,8 +107,14 @@ export const mainContent = async (questions: Array<Question>) => {
     }
   }
   let html = `
+  <div id = "examTitle">
   <h1> Welcome to VSA's Entrance Exam</h1>
-  <h3> The exam consists of ${numQuestions} questions, and covers the following topics: ${topics}. </h3> `;
+  </div>
+  <div id = "examDescription">
+  <h3> The exam consists of ${numQuestions} questions, and covers the following topics: ${topics}. </h3>
+  <p>Below you will see a list of all the questions. Feel free to click on any of them to get redirected to that question page. On question pages you will have buttons to move to the previous and next question , if applicable, to improve your experience. You will also see a suprirse compainion on question pages who can cheer you up. Good luck you got this!</p>
+  </div> 
+  <div id= "examQuestions">`;
   html += `<ol>`;
   for (const question of questions) {
     console.log("We're doing some debugging!");
@@ -116,10 +125,10 @@ export const mainContent = async (questions: Array<Question>) => {
       `${fileName}`,
       await renderQuestionPage(question, questionCounter - 1, numQuestions)
     );
-    html += `<li><p><a href=./${fileName}>${question.question}</a></p></li>`;
+    html += `<div id="questionInstance"><li><p><a href=./${fileName}>${question.question}</a></p></li></div>`;
   }
-  html += `</ol>`;
-  html += footerAll();
+  html += `</ol>
+  </div>`;
   return html;
 };
 
@@ -130,7 +139,10 @@ export const renderMainPage = async (questions: Array<Question>) => {
     ${headerMainPage()}
     <body>
         ${topBar()}
+        <section id = "mainContent">
         ${await mainContent(questions)}
+        </section>
+        ${footerAll()}
     </body>
   </html>`;
 };
