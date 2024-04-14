@@ -50,7 +50,7 @@ const renderQuestionPage = async (
   // add all fields of the question object to the html as p tags
   html += `<div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div>`;
   html += `<div id="questionTitle"><h1>${question.question}</h1></div>`;
-  html += `<div id="questionMetaData"<p>${question.category}</p><p>${question.difficulty}</p></div>`;
+  html += `<div id="questionMetaData"><p>${question.category}</p><p>${question.difficulty}</p></div>`;
   //We'll combine correct answers with incorrect ones, so then we can shuffle the buttons in the page.
   let allAnswers = [question.answer, ...question.incorrect_answers];
   //Shuffle the allAnswersArray
