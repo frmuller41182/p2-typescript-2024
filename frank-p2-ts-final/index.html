@@ -50,27 +50,7 @@
         margin-left: 5vw;
         flex: 1;
       }
-
-      .user {
-        font-family: sans-serif;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: .4rem;
-        border-bottom: 1px solid #ddd;
-      }
-      .user img {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        margin-right: 0.7rem;
-      }
-      .user .name {
-        font-weight: bold;
-      }
-      .user .email {
-        font-family: monospace;
-      }
+      /* TopBar CSS */
       header {
         display: flex;
         flex-direction: column;
@@ -79,12 +59,12 @@
         flex: 0.5;
         max-height: 10vh;
       }
-      
+
       #topBar {
         background-color: var(--secondary-color);
         max-height: 100%;
       }
-      
+
       .topBarEl {
         display: flex;
         flex-direction: row;
@@ -94,38 +74,54 @@
         max-height: 100%;
         width: 100%;
       }
-      
+
       #topLogo {
         max-height: 90%;
         flex: 0.5;
       }
-      
+
       #topLogo img {
         height: 10vh;
         max-height: 40vh;
       }
-      
+
       #TopBarTitle {
-        font-size: 2rem;
+        font-size: 1.5rem;
         max-height: 7vh;
         margin-top: 0;
         width: auto;
         flex: 1;
       }
-      
+
       #TopBarTitle h1 {
+        font-size: calc(1rem + 1vw); /* Adjust the scaling as needed */
         max-height: 90%;
         margin-top: 0;
         color: var(--font-color-secondary-background);
       }
-      
+
       #ButtonContainer {
         flex: 0.5;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
-      
+
+      #buttoncolorchange {
+        padding: 0.5rem 1rem; /* More clickable area */
+        background-color: #fff; /* Make it stand out */
+        border: 1px solid var(--secondary-color); /* Tie it to your color scheme */
+        border-radius: 0.3rem; /* Modern rounded corners */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+      }
+
+      #buttoncolorchange:hover {
+        background-color: var(
+          --font-color-secondary-background
+        ); /* Slight effect on hover */
+        color: var(--secondary-color); /* Change text color for contrast */
+      }
+
       #TopBarTitle {
         display: flex;
         flex-direction: column;
@@ -181,10 +177,10 @@
   <h1> Welcome to VSA's Entrance Exam</h1>
   </div>
   <div id = "examDescription">
-  <h3> The exam consists of 5 questions, and covers the following topics:  History , Science: Computers , Science: Mathematics , Geography , Entertainment: Music . </h3>
+  <h3> The exam consists of 5 questions, and covers the following topics:  Entertainment: Music , General Knowledge , Entertainment: Film , Science &amp; Nature . </h3>
   <p>Below you will see a list of all the questions. Feel free to click on any of them to get redirected to that question page. On question pages you will have buttons to move to the previous and next question , if applicable, to improve your experience. You will also see a suprirse compainion on question pages who can cheer you up. Good luck you got this!</p>
   </div> 
-  <div id= "examQuestions"><ol><div class="questionInstance"><li><p><a href=././question_pages/question1.html>What was the real name of the Albanian national leader Skanderbeg?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question2.html>What does the &quot;MP&quot; stand for in MP3?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question3.html>In Roman Numerals, what does XL equate to?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question4.html>The land mass of modern day Turkey is called what?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question5.html>Arcade Fire&#039;s &#039;The Suburbs&#039; won the Album of the Year award in the 2011 Grammys.</a></p></li></div></ol>
+  <div id= "examQuestions"><ol><div class="questionInstance"><li><p><a href=././question_pages/question1.html>When did The Beatles release the LP &quot;Please Please Me&quot;?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question2.html>Which of the following is not another name for the eggplant?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question3.html>Who is a pioneer of &quot;Minimal Music&quot; in 1960s?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question4.html>What was the name of the planet in &quot;Aliens&quot;?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question5.html>71% of the Earth&#039;s surface is made up of</a></p></li></div></ol>
   </div>
         </section>
         <section id="Footer">

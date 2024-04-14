@@ -1,7 +1,6 @@
 /*This file will contain the functions to render the objects (questions) of my program.
 We will be rendering different HTML Pages. 
 Shuffle the JS Array: https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
-1. First of all we will be rendering the main page. 
  */
 
 import { Question } from "./questions";
@@ -19,10 +18,11 @@ const renderPokemonDiv = async () => {
   let pokemon = await getPokemon();
   html += `<div class="pokemonDiv">`;
   html += `<div id="timer"></div>`;
-  html += `<h3>${pokemon.species}</h3>`;
-  html += `<img src="${pokemon.sprite}">`;
+  html += `<h3 id="pokeName">${pokemon.species}</h3>`;
+  html += `<img src="${pokemon.sprite}" id="pokeGif">`;
   html += `<audio id= "pokemonCry" src="${pokemon.cry}" ></audio>`;
-  html += `<button class="cryButton" onclick="playCry()">Battle Cry</button>`;
+  html += `<button class="cryButton" onclick="playCry()"><b>Cheer me up!!</b></button>`;
+  html += `<p id="warning">Careful, it's <span>loud</span></p>`;
   html += `<script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
@@ -48,9 +48,9 @@ const renderQuestionPage = async (
   html += top;
   html += `<section id = "mainContent">`;
   // add all fields of the question object to the html as p tags
-  html += `<div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div>`;
+  html += `<div id="goBackLink"><p><a href='../index.html' class="goBackButton">Go Home Page </a></p></div>`;
   html += `<div id="questionTitle"><h1>${question.question}</h1></div>`;
-  html += `<div id="questionMetaData"><p>${question.category}</p><p>${question.difficulty}</p></div>`;
+  html += `<div id="questionMetaData"><p id="questionCategory">${question.category}</p><p id="questionDifficulty" data-difficulty="${question.difficulty}">${question.difficulty}</p></div>`;
   //We'll combine correct answers with incorrect ones, so then we can shuffle the buttons in the page.
   let allAnswers = [question.answer, ...question.incorrect_answers];
   //Shuffle the allAnswersArray
@@ -65,9 +65,9 @@ const renderQuestionPage = async (
   for (const answer of allAnswers) {
     let buttonClass = "";
     if (answer === question.answer) {
-      buttonClass = "answerButton correctAnswer";
+      buttonClass = "answerButton correct";
     } else {
-      buttonClass = "answerButton";
+      buttonClass = "answerButton incorrect";
     }
     html += `<button class ="${buttonClass}">${answer}</button>`;
   }

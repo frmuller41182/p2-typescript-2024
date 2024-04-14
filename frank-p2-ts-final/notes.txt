@@ -45,7 +45,13 @@ TODOS:
 2. In each of the questions page add buttons to simulate an exam. --> DONE
 3. Get inspired from other students work and add some next-level HTM and CSS into the P2 assignment. 
 4. Add a timer to the question pages (30"). --> DONE
-5. Add a Pokemon to each question page, to give the students support.
+5. Add a Pokemon to each question page, to give the students support. --> DONE
 6. Add animations and more advanced UI front-end features. 
-7. Continue to step by step add the missing HTML Elements I want 
-8. Add a dynamic title for the exam page that has the number of questions and also the topics covered
+7. Continue to step by step add the missing HTML Elements I want --> DONE
+8. Add a dynamic title for the exam page that has the number of questions and also the topics covered --> DONE
+9. Add :hover, :focus, and :active pseudo-class styles to your links and buttons to give visual feedback when users interact with them.
+
+
+Last Stretch Goal
+
+10. Combine CSS with very simple JS so that when user answers an answer, it reveals whether that was the correct answer or not.
