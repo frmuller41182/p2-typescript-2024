@@ -30,7 +30,6 @@
         --font-color-secondary-background: #000000;
         /* As we saw in class we declare a few options in case the user's browser doesn't support the first one. */
         --primary-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        /* Using the best practices values and*/
         --font-size-small: 0.8rem;
         --font-size-regular: 1rem;
         --font-size-large: 1.5rem;
@@ -50,6 +49,7 @@
         margin-left: 5vw;
         flex: 1;
       }
+
       /* TopBar CSS */
       header {
         display: flex;
@@ -94,7 +94,7 @@
       }
 
       #TopBarTitle h1 {
-        font-size: calc(1rem + 1vw); /* Adjust the scaling as needed */
+        font-size: calc(1rem + 1vw); /* we adjust scaling so the h1 p doesn't overflow the TopBar component. */
         max-height: 90%;
         margin-top: 0;
         color: var(--font-color-secondary-background);
@@ -108,17 +108,17 @@
       }
 
       #buttoncolorchange {
-        padding: 0.5rem 1rem; /* More clickable area */
-        background-color: #fff; /* Make it stand out */
+        padding: 0.5rem 1rem; 
+        background-color: #fff;
         border: 1px solid var(--secondary-color); /* Tie it to your color scheme */
-        border-radius: 0.3rem; /* Modern rounded corners */
-        transition: background-color 0.3s; /* Smooth transition for background color */
+        border-radius: 0.3rem; /* Nice modern rounded corners */
+        transition: background-color 0.3s; /* We add this so it's not full auto the change */
       }
 
       #buttoncolorchange:hover {
         background-color: var(
           --font-color-secondary-background
-        ); /* Slight effect on hover */
+        ); /* Cool effect on hover */
         color: var(--secondary-color); /* Change text color for contrast */
       }
 
@@ -127,6 +127,24 @@
         flex-direction: column;
         align-items: center;
       }
+
+      /* Question Instances Styling */
+
+      .questionInstance {
+  margin: 1rem 0; 
+  background: #f8f8f8;
+  border-left: 5px solid #8b0000; /* A red bar on the left, nice touch */
+  padding: 0.5rem 1rem;
+  border-radius: 5px; /
+}
+
+.questionInstance a {
+  color: #333;
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s;
+}
+
     footer {
       flex: 0.3;
     }
@@ -143,7 +161,6 @@
     .FooterEl div p {
       color: var(--font-color-secondary-background);
     }
-
     </style>
       <title>Virtus Scientia Academy (VSA) | Home Page</title>
     </head>
@@ -177,10 +194,10 @@
   <h1> Welcome to VSA's Entrance Exam</h1>
   </div>
   <div id = "examDescription">
-  <h3> The exam consists of 5 questions, and covers the following topics:  Entertainment: Music , General Knowledge , Entertainment: Film , Science &amp; Nature . </h3>
+  <h3> The exam consists of 5 questions, and covers the following topics:  Entertainment: Musicals &amp; Theatres , Entertainment: Video Games , History , Geography , Entertainment: Television . </h3>
   <p>Below you will see a list of all the questions. Feel free to click on any of them to get redirected to that question page. On question pages you will have buttons to move to the previous and next question , if applicable, to improve your experience. You will also see a suprirse compainion on question pages who can cheer you up. Good luck you got this!</p>
   </div> 
-  <div id= "examQuestions"><ol><div class="questionInstance"><li><p><a href=././question_pages/question1.html>When did The Beatles release the LP &quot;Please Please Me&quot;?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question2.html>Which of the following is not another name for the eggplant?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question3.html>Who is a pioneer of &quot;Minimal Music&quot; in 1960s?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question4.html>What was the name of the planet in &quot;Aliens&quot;?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question5.html>71% of the Earth&#039;s surface is made up of</a></p></li></div></ol>
+  <div id= "examQuestions"><ol><div class="questionInstance"><li><p><a href=././question_pages/question1.html>Which Shakespeare play inspired the musical &#039;West Side Story&#039;?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question2.html>Faust is a playable character in &quot;Guilty Gear Xrd Revelator&quot;.</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question3.html>Who was among those killed in the 2010 Smolensk, Russia plane crash tragedy?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question4.html>What country has a horizontal bicolor red and white flag?</a></p></li></div><div class="questionInstance"><li><p><a href=././question_pages/question5.html>What was the date of original airing of the pilot episode of My Little Pony: Friendship is Magic?</a></p></li></div></ol>
   </div>
         </section>
         <section id="Footer">

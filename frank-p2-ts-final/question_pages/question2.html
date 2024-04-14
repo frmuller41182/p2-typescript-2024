@@ -83,7 +83,7 @@
         }
   
         #TopBarTitle h1 {
-          font-size: calc(1rem + 1vw); /* Adjust the scaling as needed */
+          font-size: calc(1rem + 1vw);
           max-height: 90%;
           margin-top: 0;
           color: var(--font-color-secondary-background);
@@ -97,18 +97,18 @@
         }
   
         #buttoncolorchange {
-          padding: 0.5rem 1rem; /* More clickable area */
-          background-color: #fff; /* Make it stand out */
-          border: 1px solid var(--secondary-color); /* Tie it to your color scheme */
-          border-radius: 0.3rem; /* Modern rounded corners */
-          transition: background-color 0.3s; /* Smooth transition for background color */
+          padding: 0.5rem 1rem;
+          background-color: #fff;
+          border: 1px solid var(--secondary-color);
+          border-radius: 0.3rem;
+          transition: background-color 0.3s;
         }
   
         #buttoncolorchange:hover {
           background-color: var(
             --font-color-secondary-background
-          ); /* Slight effect on hover */
-          color: var(--secondary-color); /* Change text color for contrast */
+          ); /* Cool effect on hover */
+          color: var(--secondary-color);
         }
   
         #TopBarTitle {
@@ -118,10 +118,10 @@
         }
   
         /* BIG SECTION
-    
-                            Question Contents CSS
-    
-                            */
+      
+                              Question Contents CSS
+      
+                              */
   
         #mainContent {
           display: flex;
@@ -135,23 +135,21 @@
         /* Styling the Go Back Button */
   
         .goBackButton {
-          display: inline-block; /* Allows setting padding and margins */
-          padding: 10px 20px; /* Spacing inside the button */
-          margin: 10px 0; /* Spacing outside the button */
-          background-color: var(
-            --secondary-color
-          ); /* Background color matching the theme */
-          color: #fff; /* Text color */
-          border-radius: 5px; /* Rounded corners */
-          text-decoration: none; /* Removes underline from link */
-          font-weight: bold; /* Makes text bold */
-          transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 10px 0;
+          background-color: var(--secondary-color);
+          color: #fff;
+          border-radius: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s, box-shadow 0.3s;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
   
         .goBackButton:hover {
-          background-color: #a30000; /* Slightly darker background on hover */
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a lifting effect */
+          background-color: #a30000;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
   
         /* Question Title */
@@ -248,40 +246,38 @@
         .pokemonDiv {
           display: flex;
           flex-direction: column;
-          align-items: center; /* Center items instead of aligning them to the end */
+          align-items: center;
           position: absolute;
           right: 5vw;
           top: 50vh;
-          transform: translateY(
-            -50%
-          ); /* Adjust the position to center it vertically */
-          background-color: #f8f8f8; /* White background */
+          transform: translateY(-50%);
+          background-color: #f8f8f8;
           border-radius: 15px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
           padding: 20px;
-          width: 300px; /* Set a specific width */
-          text-align: center; /* Center text and content */
-          margin: 0; /* Reset margin */
+          width: 300px;
+          text-align: center;
+          margin: 0;
         }
         #pokeName {
-          color: #333; /* Dark gray color for the Pokémon's name */
-          margin: 10px 0; /* Space above and below the name */
+          color: #333;
+          margin: 10px 0;
         }
   
         #pokeGif {
-          max-width: 100%; /* Ensure the image is not too big */
-          height: auto; /* Maintain aspect ratio */
-          border-radius: 10px; /* Slightly round the corners of the image */
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
         }
   
         .cryButton {
-          background-color: var(--secondary-color); /* Theme color */
-          color: #fff; /* White text */
-          border: none; /* No border */
-          border-radius: 5px; /* Rounded corners */
-          padding: 10px 20px; /* Padding for spacing */
-          margin-top: 10px; /* Space above the button */
-          cursor: pointer; /* Cursor indicates clickable */
+          background-color: var(--secondary-color);
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          margin-top: 10px;
+          cursor: pointer;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
           transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
         }
@@ -292,23 +288,23 @@
         }
   
         #timer {
-          background-color: #e0e0e0; /* Light grey background */
-          padding: 5px 10px; /* Padding inside the timer */
-          border-radius: 5px; /* Rounded corners */
-          margin-bottom: 10px; /* Space below the timer */
+          background-color: #e0e0e0;
+          padding: 5px 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
         }
   
         #timer.active {
-          background-color: #4caf50; /* Active state color */
+          background-color: #4caf50;
         }
   
         #warning {
-          font-size: 0.8em; /* Smaller text size */
-          color: #555; /* Lighter text color */
+          font-size: 0.8em;
+          color: #555;
         }
   
         #warning span {
-          font-weight: bold; /* Make 'loud' bold for emphasis */
+          font-weight: bold;
         }
   
         /* Quesiton Nav Button Styling */
@@ -330,12 +326,12 @@
         }
   
         #questionNavButtons button {
-          background-color: #fff; /* White background */
-          color: #333; /* Dark text color for contrast */
-          border: 2px solid var(--secondary-color); /* Solid border with theme color */
-          border-radius: 20px; /* Rounded corners for a modern look */
-          padding: 10px 20px; /* Padding for spacing */
-          font-size: 16px; /* Readable font size */
+          background-color: #fff;
+          color: #333;
+          border: 2px solid var(--secondary-color);
+          border-radius: 20px;
+          padding: 10px 20px;
+          font-size: 16px;
           cursor: pointer; /* Cursor indicates button */
           transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions for interactivity */
           margin: 0 10px; /* Margin for spacing between buttons */
@@ -394,10 +390,10 @@
           </div>
         </div>
       </section>
-    </header><section id = "mainContent"><div id="goBackLink"><p><a href='../index.html' class="goBackButton">Go Home Page </a></p></div><div id="questionTitle"><h1>Which of the following is not another name for the eggplant?</h1></div><div id="questionMetaData"><p id="questionCategory">General Knowledge</p><p id="questionDifficulty" data-difficulty="hard">hard</p></div>  <div id="questionImage"><image
+    </header><section id = "mainContent"><div id="goBackLink"><p><a href='../index.html' class="goBackButton">Go Home Page </a></p></div><div id="questionTitle"><h1>Faust is a playable character in &quot;Guilty Gear Xrd Revelator&quot;.</h1></div><div id="questionMetaData"><p id="questionCategory">Entertainment: Video Games</p><p id="questionDifficulty" data-difficulty="easy">easy</p></div>  <div id="questionImage"><image
   class="imageQuestion"
-  src="https://source.unsplash.com/featured/?General Knowledge"
-/></div><div id = "questionAnswers"><button class ="answerButton correct">Potimarron</button><button class ="answerButton incorrect">Guinea Squash</button><button class ="answerButton incorrect">Brinjal</button><button class ="answerButton incorrect">Melongene</button></div><div class="pokemonDiv"><div id="timer"></div><h3 id="pokeName">charizard</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/6.gif" id="pokeGif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/6.ogg" ></audio><button class="cryButton" onclick="playCry()"><b>Cheer me up!!</b></button><p id="warning">Careful, it's <span>loud</span></p><script>function playCry() {
+  src="https://source.unsplash.com/featured/?Entertainment: Video Games"
+/></div><div id = "questionAnswers"><button class ="answerButton correct">True</button><button class ="answerButton incorrect">False</button></div><div class="pokemonDiv"><div id="timer"></div><h3 id="pokeName">nidorina</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/30.gif" id="pokeGif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/30.ogg" ></audio><button class="cryButton" onclick="playCry()"><b>Cheer me up!!</b></button><p id="warning">Careful, it's <span>loud</span></p><script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
       audio.play();
