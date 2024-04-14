@@ -40,6 +40,9 @@
           margin: 0;
           padding: 0;
           font-family: "Roboto", sans-serif;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
         }
         /* TopBar CSS */
         header {
@@ -104,10 +107,10 @@
         }
   
         /* BIG SECTION
-            
-            Question Contents CSS 
-            
-            */
+                  
+                  Question Contents CSS 
+                  
+                  */
   
         #mainContent {
           display: flex;
@@ -115,6 +118,7 @@
           align-items: center;
           margin-right: 12vw;
           margin-left: 12vw;
+          flex: 1;
         }
   
         /* Question Title */
@@ -148,14 +152,14 @@
           margin-bottom: 3vh;
         }
         .answerButton {
-          background-color: #f8f8f8; 
-          color: #333; 
-          border: 2px solid #ccc; 
-          border-radius: 5px; 
-          padding: 10px 20px; 
-          margin: 5px; 
-          font-size: 16px; 
-          cursor: pointer; 
+          background-color: #f8f8f8;
+          color: #333;
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          padding: 10px 20px;
+          margin: 5px;
+          font-size: 16px;
+          cursor: pointer;
           transition: transform 0.1s ease, background-color 0.2s, box-shadow 0.2s;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -190,7 +194,7 @@
           align-items: flex-end;
           position: absolute;
           right: 5vw;
-          top: 60vh;
+          top: 50vh;
         }
   
         /* Quesiton Nav Button Styling */
@@ -210,6 +214,30 @@
           margin: 0 2vw;
           text-align: center;
         }
+  
+        #questionNavButtons button {
+          background-color: #fff; /* White background */
+          color: #333; /* Dark text color for contrast */
+          border: 2px solid #8b0000; /* Solid border with theme color */
+          border-radius: 20px; /* Rounded corners for a modern look */
+          padding: 10px 20px; /* Padding for spacing */
+          font-size: 16px; /* Readable font size */
+          cursor: pointer; /* Cursor indicates button */
+          transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions for interactivity */
+          margin: 0 10px; /* Margin for spacing between buttons */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+  
+        #questionNavButtons button:hover {
+          background-color: #8b0000; /* Theme color on hover */
+          color: #fff; /* White text color on hover */
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow for lifting effect */
+        }
+  
+        #questionNavButtons button:active {
+          transform: scale(0.95); /* Button scales down when clicked */
+        }
+  
         /* Footer Styling */
   
         footer {
@@ -252,10 +280,10 @@
           </div>
         </div>
       </section>
-    </header><section id = "mainContent"><div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div><div id="questionTitle"><h1>How old was Lyndon B. Johnson when he assumed the role of President of the United States?</h1></div><div id="questionMetaData"><p>History</p><p>medium</p></div>  <div id="questionImage"><image
+    </header><section id = "mainContent"><div id="goBackLink"><p><a href='../index.html'>Go Back </a></p></div><div id="questionTitle"><h1>Arcade Fire&#039;s &#039;The Suburbs&#039; won the Album of the Year award in the 2011 Grammys.</h1></div><div id="questionMetaData"><p>Entertainment: Music</p><p>medium</p></div>  <div id="questionImage"><image
   class="imageQuestion"
-  src="https://source.unsplash.com/featured/?History"
-/></div><div id = "questionAnswers"><button class ="answerButton correctAnswer">55</button><button class ="answerButton">50</button><button class ="answerButton">54</button><button class ="answerButton">60</button></div><div class="pokemonDiv"><div id="timer"></div><h3>slowbro</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/80.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/80.ogg" ></audio><button class="cryButton" onclick="playCry()">Battle Cry</button><script>function playCry() {
+  src="https://source.unsplash.com/featured/?Entertainment: Music"
+/></div><div id = "questionAnswers"><button class ="answerButton">False</button><button class ="answerButton correctAnswer">True</button></div><div class="pokemonDiv"><div id="timer"></div><h3>nidoran-m</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/32.gif"><audio id= "pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/32.ogg" ></audio><button class="cryButton" onclick="playCry()">Battle Cry</button><script>function playCry() {
     const audio = document.getElementById('pokemonCry');
     if (audio) {
       audio.play();
